@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: aqua;
+}
+
+.iev-carousel {
+    height: 175px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px;
+}
+
+.carousel-list {
+    position: relative;
+    list-style: none;
+    width: 2000px;
+    padding: 0;
+}
+
+.carousel-hider {
+    width: 588px;
+    height: 175px;
+    overflow: hidden;
+    float: left;
+}
+.carousel-element {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 140px;
+    height: 140px;
+    text-align: center;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    margin: 30px 25px 0 0;
+    float: left;
+}
+
+.carousel-element img {
+    height: 157px;
+    position: absolute;
+    bottom: -3px;
+    z-index: 0;
+}
+
+/*.carousel-element::after {*/
+    /*content: '';*/
+    /*width: 140px;*/
+    /*height: 140px;*/
+    /*!*margin-top: 137px;*!*/
+    /*border-bottom: 3px solid #fff;*/
+    /*border-radius: 50%;*/
+    /*z-index: 2;*/
+/*}*/
+
+.carousel-element img:hover {
+    animation: myzoom .2s forwards;
+}
+
+@keyframes myzoom {
+    80% {
+        /*width: 110%;*/
+        /*height: 110%;*/
+        transform: scale(1.12);
+        bottom: 5px;
+    }
+    100% {
+        /*width: 105%;*/
+        /*height: 105%;*/
+        transform: scale(1.07);
+        bottom: 3px;
+    }
+}
+
+
+.carousel-element > div {
+    position: absolute;
+    bottom: -3px;
+    width: 140px;
+    height: 6px;
+    overflow: hidden;
+}
+
+.carousel-element > div > div {
+    position: absolute;
+    bottom: 0;
+    width: 140px;
+    height: 140px;
+    /*overflow: hidden;*/
+    /*margin-top: 137px;*/
+    border-bottom: 3px solid #fff;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.carousel-arrow-left,
+.carousel-arrow-right {
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    float: left;
+    display: block;
+    border: 2px solid grey;
+    border-radius: 5px;
+    background-color: lightgrey;
+    padding: 5px;
+    margin-top: -50px;
+}
+
+.carousel-arrow-left:hover,
+.carousel-arrow-right:hover {
+    cursor: pointer;
+    background-color: grey;
+}
+
+.carousel-arrow-left {
+    margin-right: 25px;
+}
+
+.carousel-arrow-right {
+    margin-left: 25px;
+}
+
+.inactive-arrow {
+    color: white;
+    border: 2px solid lightgrey;
+}
+
+.inactive-arrow:hover {
+    background-color: lightgrey;
+    cursor: default;
+}
