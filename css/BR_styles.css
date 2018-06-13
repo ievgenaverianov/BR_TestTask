@@ -4,11 +4,11 @@
 }
 
 body {
-    background-color: aqua;
+    background-color: #1cb5b2;
 }
 
 .iev-carousel {
-    height: 185px;
+    height: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -21,12 +21,12 @@ body {
     position: relative;
     list-style: none;
     width: 100%;
-    padding: 10px 0;
+    padding: 65px 0;
 }
 
 .carousel-hider {
     width: 90%;
-    height: 185px;
+    height: 300px;
     overflow: hidden;
     float: left;
 }
@@ -80,10 +80,11 @@ body {
 
 .carousel-element > div {
     position: absolute;
-    bottom: -3px;
+    bottom: -2px;
     width: 140px;
     height: 6px;
     overflow: hidden;
+    box-sizing: border-box;
 }
 
 .carousel-element > div > div {
@@ -94,6 +95,7 @@ body {
     border-bottom: 2px solid #ddd;
     border-radius: 50%;
     z-index: 2;
+    box-sizing: border-box;
 }
 
 .carousel-element:hover > div > div {
@@ -101,62 +103,70 @@ body {
 }
 
 .away-animated-last {
-    animation: myfadeaway-last 2s forwards;
+    animation: myfadeaway-last 1s forwards;
 }
 
 @keyframes myfadeaway-last {
     from {
         opacity: 1;
         left: 0;
+        transform: scale(1);
     }
     to {
         opacity: 0;
         left: 200px;
+        transform: scale(1.5);
     }
 }
 
 .in-animated-first {
-    animation: myfadein-first 2s forwards;
+    animation: myfadein-first 0.7s linear forwards;
 }
 
 @keyframes myfadein-first {
     from {
         opacity: 0;
         left: -200px;
+        transform: scale(1.5);
     }
     to {
         opacity: 1;
         left: 0;
+        transform: scale(1);
     }
 }
 
 .away-animated-first {
-    animation: myfadeaway-first 2s forwards;
+    animation: myfadeaway-first 1s forwards;
 }
 
 @keyframes myfadeaway-first {
     from {
         opacity: 1;
         right: 0;
+        transform: scale(1);
     }
     to {
         opacity: 0;
         right: 200px;
+        transform: scale(1.5);
     }
 }
 
 .in-animated-last {
-    animation: myfadein-last 2s forwards;
+    animation: myfadein-last 0.7s linear forwards;
 }
 
 @keyframes myfadein-last {
     from {
         opacity: 0;
         right: -200px;
+        transform: scale(1.5);
     }
     to {
         opacity: 1;
         right: 0;
+        transform: scale(1);
     }
 }
 
