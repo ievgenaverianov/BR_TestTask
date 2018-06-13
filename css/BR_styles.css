@@ -1,3 +1,11 @@
+@font-face {
+    font-family: 'Neuron Heavy';
+    src: url('../fonts/neuron_heavy-webfont.woff2') format('woff2'),
+         url('../fonts/neuron_heavy-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -9,10 +17,14 @@ body {
 
 .iev-carousel {
     height: 300px;
+    width: 95%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 200px 30px;
+    margin: 200px auto;
+    font-family: 'Neuron Heavy', Arial, sans-serif;
+    font-size: 24px;
+    background-color: #1cb5b2;
 }
 
 .carousel-list {
@@ -54,8 +66,8 @@ body {
 .carousel-element img {
     height: 157px;
     position: absolute;
-    bottom: -3px;
-    z-index: 0;
+    bottom: -1px;
+    /*z-index: 0;*/
 }
 
 .carousel-element:hover img {
@@ -69,7 +81,7 @@ body {
 @keyframes myzoom {
     80% {
         transform: scale(1.12);
-        bottom: 5px;
+        bottom: 7px;
     }
     100% {
         transform: scale(1.07);
@@ -99,7 +111,7 @@ body {
 }
 
 .carousel-element:hover > div > div {
-    border-bottom: 3px solid #fff;
+    border-bottom: 2px solid #fff;
 }
 
 .away-animated-last {
@@ -120,7 +132,7 @@ body {
 }
 
 .in-animated-first {
-    animation: myfadein-first 0.7s linear forwards;
+    animation: myfadein-first 0.5s ease-in forwards;
 }
 
 @keyframes myfadein-first {
@@ -154,7 +166,7 @@ body {
 }
 
 .in-animated-last {
-    animation: myfadein-last 0.7s linear forwards;
+    animation: myfadein-last 0.5s ease-in forwards;
 }
 
 @keyframes myfadein-last {
@@ -173,41 +185,40 @@ body {
 
 .carousel-arrow-left,
 .carousel-arrow-right {
-    width: 20px;
-    height: 20px;
-    line-height: 20px;
+    width: 150px;
+    height: 50px;
+    line-height: 50px;
     text-align: center;
     font-weight: bold;
-    font-family: Arial, sans-serif;
-    float: left;
-    display: block;
-    border: 2px solid grey;
+    border: 2px solid #f5f8f7;
     border-radius: 5px;
-    background-color: lightgrey;
+    background-color: #1cb5b2;
+    color: #f5f8f7;
     padding: 5px;
-    margin-top: -50px;
+    text-transform: uppercase;
+    transform-style: preserve-3d;
 }
 
 .carousel-arrow-left:hover,
 .carousel-arrow-right:hover {
     cursor: pointer;
-    background-color: grey;
+    background-color: #f5f8f7;
+    color: #1cb5b2;
+}
+
+.carousel-arrow-left:hover span,
+.carousel-arrow-right:hover span {
+    color: #f5f8f7;
+}
+
+.arrow-par {
+    perspective: 100px;
 }
 
 .carousel-arrow-left {
-    margin-right: 25px;
+    transform: rotatex(-1deg) rotatey(5deg);
 }
 
 .carousel-arrow-right {
-    margin-left: 25px;
-}
-
-.inactive-arrow {
-    color: white;
-    border: 2px solid lightgrey;
-}
-
-.inactive-arrow:hover {
-    background-color: lightgrey;
-    cursor: default;
+    transform: rotatex(-1deg) rotatey(-5deg);
 }
